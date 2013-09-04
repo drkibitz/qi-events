@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/drkibitz/qi-events.png?branch=master)](https://travis-ci.org/drkibitz/qi-events)
+[![NPM version](https://badge.fury.io/js/qi-events.png)](http://badge.fury.io/js/qi-events)
 
 # Qi Events
 
