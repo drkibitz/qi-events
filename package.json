@@ -1,5 +1,7 @@
 {
   "author": "Dr. Kibitz <info@drkibitz.com>",
+  "bugs": "https://github.com/drkibitz/qi-events/issues",
+  "contributors": "Jeremy Ashkenas <jashkenas@gmail.com>",
   "devDependencies": {
     "sinon": "1.7.x",
     "mocha": "*",
@@ -10,6 +12,9 @@
   },
   "description": "A no nonsense event API (BASED ON Backbone.Events)",
   "files": ["events.js"],
+  "homepage": "http://drkibitz.github.io/qi-events/",
+  "keywords": ["qi", "event", "events", "trigger"],
+  "license" : "MIT",
   "main": "events",
   "name": "qi-events",
   "repository": "https://github.com/drkibitz/qi-events",
