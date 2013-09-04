@@ -1,0 +1,21 @@
+{
+  "author": "Dr. Kibitz <info@drkibitz.com>",
+  "devDependencies": {
+    "sinon": "1.7.x",
+    "mocha": "*",
+    "grunt": "0.4.x",
+    "grunt-contrib-jshint": "0.6.x",
+    "grunt-jsdoc": "0.4.x",
+    "grunt-simple-mocha": "0.4.x"
+  },
+  "description": "A no nonsense event API (BASED ON Backbone.Events)",
+  "files": ["events.js"],
+  "main": "events",
+  "name": "qi-events",
+  "repository": "https://github.com/drkibitz/qi-events",
+  "scripts": {
+    "test": "grunt test",
+    "doc": "grunt doc"
+  },
+  "version": "0.0.1"
+}
