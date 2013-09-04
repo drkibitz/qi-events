@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/drkibitz/qi-events.png?branch=master)](https://travis-ci.org/drkibitz/qi-events)
+
 # Qi Events
 
 Events module (**BASED ON** Backbone.Events)
