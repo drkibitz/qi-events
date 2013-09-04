@@ -2,6 +2,8 @@
 
 # Qi Events
 
+http://drkibitz.github.io/qi-events/
+
 Events module (**BASED ON** Backbone.Events)
 
 > Backbone.js 0.9.10
