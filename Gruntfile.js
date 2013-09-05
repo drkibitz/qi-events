@@ -15,7 +15,10 @@ module.exports = function(grunt) {
             }
         },
         simplemocha: {
-            test: { src: ['test/**/*.js'] }
+            test: { src: ['test/**/*.js'] },
+            options: {
+                reporter: 'spec'
+            }
         }
     });
 
@@ -23,7 +26,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-jsdoc');
     grunt.loadNpmTasks('grunt-simple-mocha');
 
-    grunt.registerTask('doc', ['jsdoc']);
     grunt.registerTask('test', ['jshint', 'simplemocha']);
-    grunt.registerTask('default', ['test', 'doc']);
+    grunt.registerTask('default', ['test', 'jsdoc']);
 };
