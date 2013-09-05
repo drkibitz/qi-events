@@ -3,9 +3,9 @@
 
 # Qi Events
 
-http://drkibitz.github.io/qi-events/
+A no nonsense event API, http://drkibitz.github.io/qi-events/
 
-Events module (**BASED ON** Backbone.Events)
+*BASED ON* Backbone.Events
 
 > Backbone.js 0.9.10
 > (c) 2010-2013 Jeremy Ashkenas, DocumentCloud Inc.
