@@ -426,4 +426,21 @@ describe('Events', function () {
         assert.strictEqual(obj2, obj2.trigger('a'));
         assert.strictEqual(obj2, obj2.off('a c'));
     });
+
+    it("usage example", function () {
+        var args, count = 0;
+
+        require('../events').mixin({})
+            .on('myevent', function () {
+                count++;
+                args = arguments;
+            }, console)
+            .trigger('myevent', 'something', 'something', 'darkside');
+
+        assert.strictEqual(count, 1);
+        assert.strictEqual(args[0], 'something');
+        assert.strictEqual(args[1], 'something');
+        assert.strictEqual(args[2], 'darkside');
+        assert.strictEqual(args[3], undefined);
+    });
 });

@@ -13,6 +13,16 @@ Events module (**BASED ON** Backbone.Events)
 > For all details and documentation:
 > http://backbonejs.org
 
+## Usage
+
+```javascript
+require('qi-events').mixin({});
+	.on('myevent', console.log, console)
+	.trigger('myevent', 'something', 'something', 'darkside');
+
+// > something something darkside
+```
+
 ## Goals
 
 - Maintain a no nonsense event dispatching/emitting/triggering API.

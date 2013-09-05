@@ -3,7 +3,6 @@
   "bugs": "https://github.com/drkibitz/qi-events/issues",
   "contributors": "Jeremy Ashkenas <jashkenas@gmail.com>",
   "devDependencies": {
-    "sinon": "1.7.x",
     "mocha": "*",
     "grunt": "0.4.x",
     "grunt-contrib-jshint": "0.6.x",
@@ -21,5 +20,5 @@
   "scripts": {
     "test": "grunt"
   },
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
