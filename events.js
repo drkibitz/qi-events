@@ -85,7 +85,7 @@ function triggerEvents(events, args, aStart) {
  * @constructs module:qi-events
  */
 function Events() {}
-module.exports = Events;
+
 /** @alias module:qi-events# */
 var proto = Events.prototype;
 
@@ -102,7 +102,7 @@ Events.ALL = 'all';
  * @param {Object} obj
  * @returns {Object} obj
  */
-Events.mixin = function mixin(obj) {
+proto.mixin = function mixin(obj) {
 	obj.on = proto.on;
 	obj.once = proto.once;
 	obj.off = proto.off;
@@ -204,3 +204,6 @@ proto.trigger = function trigger(name) {
 	if (allEvents) triggerEvents(allEvents, arguments, 0);
 	return this;
 };
+
+exports = module.exports = new Events();
+exports.Events = Events;
