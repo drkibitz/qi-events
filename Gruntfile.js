@@ -3,14 +3,14 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         jshint: {
-            test: ['Gruntfile.js', 'Events.js', 'test/**/*.js'],
+            test: ['Gruntfile.js', 'events.js', 'test/**/*.js'],
             options: {
                 jshintrc: '.jshintrc'
             }
         },
         jsdoc: {
             all: {
-                src: ['package.json', 'README.md', 'Events.js'],
+                src: ['package.json', 'README.md', 'events.js'],
                 dest: 'build/artifacts/api'
             }
         },
