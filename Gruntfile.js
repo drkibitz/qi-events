@@ -1,21 +1,21 @@
-"use strict";
-
-var banner = [
-'/**',
-' * <%= package.name %> <%= package.version %>',
-' * <%= package.homepage %>',
-' * Copyright (c) 2013 Dr. Kibitz, http://drkibitz.com',
-' * <%= package.description %>',
-' *',
-' * Backbone.js 0.9.10',
-' * (c) 2010-2013 Jeremy Ashkenas, DocumentCloud Inc.',
-' * Backbone may be freely distributed under the MIT license.',
-' * For all details and documentation:',
-' * http://backbonejs.org',
-' */',
-''].join("\n");
-
 module.exports = function(grunt) {
+    "use strict";
+
+    var banner = [
+    '/**',
+    ' * <%= package.name %> <%= package.version %>',
+    ' * <%= package.homepage %>',
+    ' * Copyright (c) 2013 Dr. Kibitz, http://drkibitz.com',
+    ' * <%= package.description %>',
+    ' *',
+    ' * Backbone.js 0.9.10',
+    ' * (c) 2010-2013 Jeremy Ashkenas, DocumentCloud Inc.',
+    ' * Backbone may be freely distributed under the MIT license.',
+    ' * For all details and documentation:',
+    ' * http://backbonejs.org',
+    ' */',
+    ''].join("\n");
+
     grunt.initConfig({
         package: require('./package.json'),
         docstrap: 'node_modules/grunt-jsdoc/node_modules/ink-docstrap/template',
