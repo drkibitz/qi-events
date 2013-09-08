@@ -1,18 +1,7 @@
 /**
- * Qi Events
- * @author Dr. Kibitz <info@drkibitz.com>
- *
- * BASED ON Backbone.Events
- *
- * Backbone.js 0.9.10
- * (c) 2010-2013 Jeremy Ashkenas, DocumentCloud Inc.
- * Backbone may be freely distributed under the MIT license.
- * For all details and documentation:
- * http://backbonejs.org
- */
-
-/**
+ * This module an instance of {@link module:qi-events.Events}.
  * @module qi-events
+ * @author Dr. Kibitz <info@drkibitz.com>
  */
 "use strict";
 
@@ -23,9 +12,9 @@
 var typeSplitter = /\s+/;
 
 /**
- * Implement fancy features of the Events API such as multiple event
+ * Implement fancy features of the events API such as multiple event
  * names `"change blur"`, jQuery-style event maps `{change: action}`.
- * @param {Events|Object} obj
+ * @param {module:qi-events.Events|Object} obj
  * @param {Function} fn
  * @param {string|Array.<string>|Object.<string>} name
  * @param {} [varname] [description]context
@@ -65,7 +54,8 @@ function eventsApi(obj, fn, name, callback, context) {
  * @ignore
  */
 function triggerEvents(events, args, aStart) {
-	var o, i = -1, l = events.length, a1 = args[aStart], a2 = args[aStart + 1], a3 = args[aStart + 2];
+	var o, i = -1, l = events.length,
+		a1 = args[aStart], a2 = args[aStart + 1], a3 = args[aStart + 2];
 	switch (args.length - aStart) {
 	case 0:
 		while (++i < l) (o = events[i]).callback.call(o.context); return;
@@ -82,25 +72,27 @@ function triggerEvents(events, args, aStart) {
 }
 
 /**
- * @constructs module:qi-events
+ * @memberof module:qi-events
+ * @constructor
  */
 function Events() {}
 
-/** @alias module:qi-events# */
-var proto = Events.prototype;
-
 /**
  * The special catch all event type.
+ * @memberof module:qi-events.Events
  * @type {string}
  * @const
  */
 Events.ALL = 'all';
 
+/** @alias module:qi-events.Events# */
+var proto = Events.prototype;
+
 /**
  * Mixes in methods from this module's prototype to *any object*
  * in order to provide it with custom events.
  * @param {Object} obj
- * @returns {Object} obj
+ * @returns {Object} obj passed
  */
 proto.mixin = function mixin(obj) {
 	obj.on = proto.on;
@@ -117,7 +109,7 @@ proto.mixin = function mixin(obj) {
  * @param {(string|Array.<string>|Object)} name String of space delimited events, array of event strings, or event map
  * @param {(Function|Object)=} callback May be function or context if passing event map
  * @param {Object=} context
- * @return {Object} this
+ * @return {Object} this object
  */
 proto.on = function on(name, callback, context) {
 	if (!eventsApi(this, on, name, callback, context) || !callback) return this;
@@ -133,7 +125,7 @@ proto.on = function on(name, callback, context) {
  * @param {(string|Array.<string>|Object)} name String of space delimited events, array of event strings, or event map
  * @param {(Function|Object)=} callback May be function or context if passing event map
  * @param {Object=} context
- * @return {Object} this
+ * @return {Object} this object
  */
 proto.once = function once(name, callback, context) {
 	if (!eventsApi(this, once, name, callback, context) || !callback) return this;
@@ -155,7 +147,7 @@ proto.once = function once(name, callback, context) {
  * @param {(string|Array.<string>|Object)} name String of space delimited events, array of event strings, or event map
  * @param {(Function|Object)=} callback May be function or context if passing event map
  * @param {Object=} context
- * @return {Object} this
+ * @return {Object} this object
  */
 proto.off = function off(name, callback, context) {
 	var retain, ev, events, names, i, l, j, k;
@@ -194,7 +186,7 @@ proto.off = function off(name, callback, context) {
  * receive the true name of the event as the first argument).
  * @param {string} name Single event name
  * @param {...*=} arg
- * @return {Object} this
+ * @return {Object} this object
  */
 proto.trigger = function trigger(name) {
 	var events = this._events, allEvents;

@@ -7,18 +7,25 @@
     "grunt": "0.4.x",
     "grunt-contrib-jshint": "0.6.x",
     "grunt-jsdoc": "0.4.x",
-    "grunt-simple-mocha": "0.4.x"
+    "grunt-simple-mocha": "0.4.x",
+    "grunt-contrib-uglify": "~0.2.4"
   },
-  "description": "A no nonsense event API (BASED ON Backbone.Events)",
-  "files": ["events.js"],
+  "description": "A no nonsense event API (BASED ON Backbone.Events).",
+  "files": [
+    "index.js"
+  ],
   "homepage": "http://drkibitz.github.io/qi-events/",
-  "keywords": ["qi", "event", "events", "trigger"],
-  "license" : "MIT",
-  "main": "events",
+  "keywords": [
+    "qi",
+    "event",
+    "events",
+    "trigger"
+  ],
+  "license": "MIT",
   "name": "qi-events",
   "repository": "https://github.com/drkibitz/qi-events",
   "scripts": {
     "test": "grunt"
   },
-  "version": "0.0.2"
+  "version": "0.0.3"
 }

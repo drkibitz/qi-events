@@ -1,7 +1,7 @@
 "use strict";
 
 var assert = require('assert');
-var Events = require('../events');
+var events = require('../');
 
 describe('Events', function () {
     var obj, obj2;
@@ -14,8 +14,8 @@ describe('Events', function () {
             counterA: 0,
             counterB: 0
         };
-        Events.mixin(obj);
-        Events.mixin(obj2);
+        events.mixin(obj);
+        events.mixin(obj2);
     }
 
     describe("on and trigger", function () {
@@ -264,8 +264,8 @@ describe('Events', function () {
 
             var a = {};
             var b = {};
-            Events.mixin(a);
-            Events.mixin(b);
+            events.mixin(a);
+            events.mixin(b);
             a.once('event', f);
             b.on('event', f);
 
@@ -430,7 +430,7 @@ describe('Events', function () {
     it("usage example", function () {
         var args, count = 0;
 
-        require('../events').mixin({})
+        require('../').mixin({})
             .on('myevent', function () {
                 count++;
                 args = arguments;
