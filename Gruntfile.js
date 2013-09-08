@@ -7,6 +7,7 @@ module.exports = function(grunt) {
     ' * <%= package.homepage %>',
     ' * Copyright (c) 2013 Dr. Kibitz, http://drkibitz.com',
     ' * <%= package.description %>',
+    ' * built: ' + new Date(),
     ' *',
     ' * Backbone.js 0.9.10',
     ' * (c) 2010-2013 Jeremy Ashkenas, DocumentCloud Inc.',
@@ -44,7 +45,7 @@ module.exports = function(grunt) {
         uglify: {
             min: {
                 files: {
-                    'index.js': ['src/events.js']
+                    'index.js': ['src/index.js']
                 }
             },
             options: {
