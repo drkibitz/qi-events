@@ -1,5 +1,5 @@
 /**
- * This module an instance of {@link module:qi-events.Events}.
+ * This module is an instance of {@link module:qi-events.Events}.
  * @module qi-events
  * @author Dr. Kibitz <info@drkibitz.com>
  */
@@ -22,27 +22,27 @@ var typeSplitter = /\s+/;
  * @ignore
  */
 function eventsApi(obj, fn, name, callback, context) {
-	var names, i, l;
-	if (!name) return true;
+    var names, i, l;
+    if (!name) return true;
 
-	if (typeof name === 'string') {
-		if (typeSplitter.test(name)) {
-			names = name.split(typeSplitter);
-			for (i = 0, l = names.length; i < l; i++) {
-				fn.call(obj, names[i], callback, context);
-			}
-		}
-		return true; // Single name
+    if (typeof name === 'string') {
+        if (typeSplitter.test(name)) {
+            names = name.split(typeSplitter);
+            for (i = 0, l = names.length; i < l; i++) {
+                fn.call(obj, names[i], callback, context);
+            }
+        }
+        return true; // Single name
 
-	} else if (Array.isArray(name)) {
-		for (i = 0, l = name.length; i < l; i++) {
-			fn.call(obj, name[i], callback, context);
-		}
-	} else {
-		for (var key in name) {
-			fn.call(obj, key, name[key], callback); // callback is context
-		}
-	}
+    } else if (Array.isArray(name)) {
+        for (i = 0, l = name.length; i < l; i++) {
+            fn.call(obj, name[i], callback, context);
+        }
+    } else {
+        for (var key in name) {
+            fn.call(obj, key, name[key], callback); // callback is context
+        }
+    }
 }
 
 /**
@@ -54,21 +54,21 @@ function eventsApi(obj, fn, name, callback, context) {
  * @ignore
  */
 function triggerEvents(events, args, aStart) {
-	var o, i = -1, l = events.length,
-		a1 = args[aStart], a2 = args[aStart + 1], a3 = args[aStart + 2];
-	switch (args.length - aStart) {
-	case 0:
-		while (++i < l) (o = events[i]).callback.call(o.context); return;
-	case 1:
-		while (++i < l) (o = events[i]).callback.call(o.context, a1); return;
-	case 2:
-		while (++i < l) (o = events[i]).callback.call(o.context, a1, a2); return;
-	case 3:
-		while (++i < l) (o = events[i]).callback.call(o.context, a1, a2, a3); return;
-	default:
-		args = aStart ? Array.prototype.slice.call(args, aStart) : args;
-		while (++i < l) (o = events[i]).callback.apply(o.context, args);
-	}
+    var o, i = -1, l = events.length,
+        a1 = args[aStart], a2 = args[aStart + 1], a3 = args[aStart + 2];
+    switch (args.length - aStart) {
+    case 0:
+        while (++i < l) (o = events[i]).callback.call(o.context); return;
+    case 1:
+        while (++i < l) (o = events[i]).callback.call(o.context, a1); return;
+    case 2:
+        while (++i < l) (o = events[i]).callback.call(o.context, a1, a2); return;
+    case 3:
+        while (++i < l) (o = events[i]).callback.call(o.context, a1, a2, a3); return;
+    default:
+        args = aStart ? Array.prototype.slice.call(args, aStart) : args;
+        while (++i < l) (o = events[i]).callback.apply(o.context, args);
+    }
 }
 
 /**
@@ -95,11 +95,11 @@ var proto = Events.prototype;
  * @returns {Object} obj passed
  */
 proto.mixin = function mixin(obj) {
-	obj.on = proto.on;
-	obj.once = proto.once;
-	obj.off = proto.off;
-	obj.trigger = proto.trigger;
-	return obj;
+    obj.on = proto.on;
+    obj.once = proto.once;
+    obj.off = proto.off;
+    obj.trigger = proto.trigger;
+    return obj;
 };
 
 /**
@@ -112,11 +112,11 @@ proto.mixin = function mixin(obj) {
  * @return {Object} this object
  */
 proto.on = function on(name, callback, context) {
-	if (!eventsApi(this, on, name, callback, context) || !callback) return this;
-	if (!this._events) this._events = {};
-	if (!this._events[name]) this._events[name] = [];
-	this._events[name].push({callback: callback, context: context || this});
-	return this;
+    if (!eventsApi(this, on, name, callback, context) || !callback) return this;
+    if (!this._events) this._events = {};
+    if (!this._events[name]) this._events[name] = [];
+    this._events[name].push({callback: callback, context: context || this});
+    return this;
 };
 
 /**
@@ -128,16 +128,16 @@ proto.on = function on(name, callback, context) {
  * @return {Object} this object
  */
 proto.once = function once(name, callback, context) {
-	if (!eventsApi(this, once, name, callback, context) || !callback) return this;
-	var that = this, called;
-	var onceCb = function () {
-		if (called) return;
-		called = true;
-		that.off(name, onceCb);
-		callback.apply(this, arguments);
-	};
-	onceCb._callback = callback;
-	return this.on(name, onceCb, context);
+    if (!eventsApi(this, once, name, callback, context) || !callback) return this;
+    var that = this, called;
+    var onceCb = function () {
+        if (called) return;
+        called = true;
+        that.off(name, onceCb);
+        callback.apply(this, arguments);
+    };
+    onceCb._callback = callback;
+    return this.on(name, onceCb, context);
 };
 
 /**
@@ -150,33 +150,33 @@ proto.once = function once(name, callback, context) {
  * @return {Object} this object
  */
 proto.off = function off(name, callback, context) {
-	var retain, ev, events, names, i, l, j, k;
-	if (!this._events || !eventsApi(this, off, name, callback, context)) return this;
-	if (!name && !callback && !context) {
-		this._events = null;
-		return this;
-	}
+    var retain, ev, events, names, i, l, j, k;
+    if (!this._events || !eventsApi(this, off, name, callback, context)) return this;
+    if (!name && !callback && !context) {
+        this._events = null;
+        return this;
+    }
 
-	names = name ? [name] : Object.keys(this._events);
-	for (i = 0, l = names.length; i < l; i++) {
-		name = names[i];
-		events = this._events[name];
-		if (events) {
-			this._events[name] = retain = [];
-			if (callback || context) {
-				for (j = 0, k = events.length; j < k; j++) {
-					ev = events[j];
-					if ((callback && callback !== ev.callback &&
-						callback !== ev.callback._callback) ||
-						(context && context !== ev.context)) {
-						retain.push(ev);
-					}
-				}
-			}
-			if (!retain.length) this._events[name] = null;
-		}
-	}
-	return this;
+    names = name ? [name] : Object.keys(this._events);
+    for (i = 0, l = names.length; i < l; i++) {
+        name = names[i];
+        events = this._events[name];
+        if (events) {
+            this._events[name] = retain = [];
+            if (callback || context) {
+                for (j = 0, k = events.length; j < k; j++) {
+                    ev = events[j];
+                    if ((callback && callback !== ev.callback &&
+                        callback !== ev.callback._callback) ||
+                        (context && context !== ev.context)) {
+                        retain.push(ev);
+                    }
+                }
+            }
+            if (!retain.length) this._events[name] = null;
+        }
+    }
+    return this;
 };
 
 /**
@@ -189,12 +189,12 @@ proto.off = function off(name, callback, context) {
  * @return {Object} this object
  */
 proto.trigger = function trigger(name) {
-	var events = this._events, allEvents;
-	if (!events) return this;
-	allEvents = events[Events.ALL];
-	if (events[name]) triggerEvents(events[name], arguments, 1);
-	if (allEvents) triggerEvents(allEvents, arguments, 0);
-	return this;
+    var events = this._events, allEvents;
+    if (!events) return this;
+    allEvents = events[Events.ALL];
+    if (events[name]) triggerEvents(events[name], arguments, 1);
+    if (allEvents) triggerEvents(allEvents, arguments, 0);
+    return this;
 };
 
 exports = module.exports = new Events();

@@ -17,8 +17,8 @@ A no nonsense event API (*BASED ON* Backbone.Events).
 
 ```javascript
 require('qi-events').mixin({});
-	.on('myevent', console.log, console)
-	.trigger('myevent', 'something', 'something', 'darkside');
+    .on('myevent', console.log, console)
+    .trigger('myevent', 'something', 'something', 'darkside');
 
 // > something something darkside
 ```
@@ -41,22 +41,22 @@ require('qi-events').mixin({});
 3. Module is a constructor that can be used with class inheritence
 4. Removed very minor dependencies on underscore.js and Backbone.js
 
-	1. Added mixin method to replace Backbone mixin functionality
-	2. Underscore was only used for slice, just using the native method
+    1. Added mixin method to replace Backbone mixin functionality
+    2. Underscore was only used for slice, just using the native method
 
 5. Completely removed listenTo(), listenToOnce(), and stopListening() methods
 6. Change eventsApi() to accept an array of event names
 7. Change eventsApi() to receive function references instead of "action" strings
 
-	1. This is a micro optimization and allows better obfuscation
+    1. This is a micro optimization and allows better obfuscation
 
 8. trigger() no longer calls eventsApi(), this is a very rare (and mostly unnecessary) use case that can be avoided
 
-	1. Optimization is important when triggering, but convenience is important when adding and removing
+    1. Optimization is important when triggering, but convenience is important when adding and removing
 
 9. With trigger not using eventsApi(), it allowed further optimizations on eventsApi() and trigger()
 
-	1. Removed ctx property from _events[name] object, just use context property instead
-	2. Fixed lint errors in the process
+    1. Removed ctx property from _events[name] object, just use context property instead
+    2. Fixed lint errors in the process
 
 10. Added aStart argument to triggerEvents() as a logical slice removing slice call for most cases
