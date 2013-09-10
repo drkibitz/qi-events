@@ -3,7 +3,7 @@
  * @module qi-events
  * @author Dr. Kibitz <info@drkibitz.com>
  */
-"use strict";
+'use strict';
 
 /**
  * Regular expression used to split event strings.
