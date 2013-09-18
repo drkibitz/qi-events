@@ -60,3 +60,7 @@ require('qi-events').mixin({});
     2. Fixed lint errors in the process
 
 10. Added aStart argument to triggerEvents() as a logical slice removing slice call for most cases
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/drkibitz/qi-events/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
