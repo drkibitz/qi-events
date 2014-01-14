@@ -3,12 +3,11 @@
   "bugs": "https://github.com/drkibitz/qi-events/issues",
   "contributors": "Jeremy Ashkenas <jashkenas@gmail.com>",
   "devDependencies": {
-    "mocha": "*",
     "grunt": "0.4.x",
-    "grunt-contrib-jshint": "0.6.x",
-    "grunt-jsdoc": "0.4.x",
-    "grunt-simple-mocha": "0.4.x",
-    "grunt-contrib-uglify": "~0.2.4"
+    "grunt-contrib-jshint": "0.8.x",
+    "grunt-contrib-uglify": "0.2.x",
+    "grunt-jsdoc": "0.5.x",
+    "grunt-mocha-test": "0.8.x"
   },
   "description": "A no nonsense event API (BASED ON Backbone.Events).",
   "files": [
@@ -25,7 +24,7 @@
   "name": "qi-events",
   "repository": "https://github.com/drkibitz/qi-events",
   "scripts": {
-    "test": "grunt"
+    "test": "grunt test"
   },
   "version": "0.0.4"
 }

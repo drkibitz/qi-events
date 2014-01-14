@@ -2,7 +2,7 @@ describe('Events', function () {
     "use strict";
 
     var assert = require('assert');
-    var events = require('../');
+    var events = global.events;
     var obj, obj2;
 
     function setup() {
@@ -429,7 +429,8 @@ describe('Events', function () {
     it("usage example", function () {
         var args, count = 0;
 
-        require('../').mixin({})
+        // require('../').mixin({})
+        events.mixin({})
             .on('myevent', function () {
                 count++;
                 args = arguments;

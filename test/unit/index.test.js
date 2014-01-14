@@ -2,7 +2,7 @@ describe('index', function () {
     "use strict";
 
     var assert = require('assert');
-    var events = require('../');
+    var events = global.events;
     var counter = 0;
 
     function listener() { counter++; }
