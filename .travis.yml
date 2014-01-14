@@ -1,10 +1,10 @@
 language: node_js
 node_js:
-- "0.10"
-- "0.11"
+- '0.10'
+- '0.11'
 env:
   global:
-  - secure: CetX10W3SCeTfvyM4c4GutdprDsRWdBgwc1Iw0eFW63Uphep1JYNhqy5oLRkGX7keBCJGmERr32Z5R0N+FWAyzP80qt1Cn4aoxaKvYsFbmW8Mmo5DaPKA0yH4NnnuQLd0kCObgh1ptaG/PMc4HxvgU1T5zkUdd3lwxUZcqd6jPA=
+  - secure: S4k6MtsTeuynthiRmpOVSBs9aVs6Fo1Bav6136a5IPprDMnH3aXGMqNtXe8gL2k6Ddt/UIVE+Ib/kk9mlBHvEKeQPyK7v4M4LAI5jaBENaySQJq/OI3hikDFxw2zByaxjAAHZ6quJkZBVA0odKwRonV7d7xnYZJ3gl7SLK4n6lw=
 install:
 - npm install grunt-cli istanbul coveralls
 - npm install
@@ -25,4 +25,4 @@ deploy:
   on:
     branch: master
     tags: true
-    node: 0.10
+    node: '0.10'

@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/drkibitz/qi-events.png?branch=master)](https://travis-ci.org/drkibitz/qi-events)
+[![Coverage Status](https://coveralls.io/repos/drkibitz/qi-events/badge.png)](https://coveralls.io/r/drkibitz/qi-events)
 [![NPM version](https://badge.fury.io/js/qi-events.png)](http://badge.fury.io/js/qi-events)
+[![devDependency Status](https://david-dm.org/drkibitz/qi-events/dev-status.png)](https://david-dm.org/drkibitz/qi-events#info=devDependencies)
 
 # Qi Events
 
