@@ -1,9 +1,9 @@
 /**
- * qi-events 0.0.4
+ * qi-events 0.0.5
  * http://drkibitz.github.io/qi-events/
  * Copyright (c) 2013 Dr. Kibitz, http://drkibitz.com
  * A no nonsense event API (BASED ON Backbone.Events).
- * built: Sun Jan 26 2014 23:14:31 GMT-0800 (PST)
+ * built: Sun Jan 26 2014 23:44:53 GMT-0800 (PST)
  *
  * Backbone.js 0.9.10
  * (c) 2010-2013 Jeremy Ashkenas, DocumentCloud Inc.
