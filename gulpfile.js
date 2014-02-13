@@ -40,7 +40,7 @@ gulp.task('uglify', function () {
             ]);
             cb(null, file);
         }))
-        .pipe(uglify({wrap: 'nodes'}))
+        .pipe(uglify())
         .pipe(map(function (file, cb) {
             file.contents = Buffer.concat([new Buffer(banner), file.contents]);
             cb(null, file);
@@ -54,7 +54,7 @@ function testTask(requireModule) {
             .pipe(mocha({
                 reporter: 'spec',
                 globals: {
-                    nodes: require(requireModule)
+                    'events': require(requireModule)
                 }
             }));
     };
