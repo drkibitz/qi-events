@@ -54,6 +54,7 @@ function eventsApi(obj, fn, name, callback, context) {
  * @ignore
  */
 function triggerEvents(events, args, aStart) {
+    /*jshint indent:false */
     var o, i = -1, l = events.length,
         a1 = args[aStart], a2 = args[aStart + 1], a3 = args[aStart + 2];
     switch (args.length - aStart) {

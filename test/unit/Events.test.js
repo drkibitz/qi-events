@@ -1,5 +1,6 @@
+/*jshint node:true*/
 describe('Events', function () {
-    "use strict";
+    'use strict';
 
     var assert = require('assert');
     var events = global.events;
@@ -17,10 +18,10 @@ describe('Events', function () {
         events.mixin(obj2);
     }
 
-    describe("on and trigger", function () {
+    describe('on and trigger', function () {
         beforeEach(setup);
 
-        it("counter should be incremented.", function () {
+        it('counter should be incremented.', function () {
             obj.on('event', function () {
                 obj.counter += 1;
             });
@@ -34,10 +35,10 @@ describe('Events', function () {
         });
     });
 
-    describe("binding and triggering", function () {
+    describe('binding and triggering', function () {
         beforeEach(setup);
 
-        it("multiple events", function () {
+        it('multiple events', function () {
             obj.on('a b c', function () {
                 obj.counter += 1;
             });
@@ -56,7 +57,7 @@ describe('Events', function () {
             assert.strictEqual(obj.counter, 5);
         });
 
-        it("with event maps", function () {
+        it('with event maps', function () {
             var increment = function () {
                 this.counter += 1;
             };
@@ -85,10 +86,10 @@ describe('Events', function () {
         });
     });
 
-    describe("on", function () {
+    describe('on', function () {
         beforeEach(setup);
 
-        it("then unbind all functions", function () {
+        it('then unbind all functions', function () {
             var callback = function () {
                 obj.counter += 1;
             };
@@ -99,7 +100,7 @@ describe('Events', function () {
             assert.strictEqual(obj.counter, 1); // counter should have only been incremented once
         });
 
-        it("two callbacks, unbind only one", function () {
+        it('two callbacks, unbind only one', function () {
             var callback = function () {
                 obj2.counterA += 1;
             };
@@ -114,7 +115,7 @@ describe('Events', function () {
             assert.strictEqual(obj2.counterB, 2); // counterB should have been incremented twice
         });
 
-        it("then unbind a callback in the midst of it firing", function () {
+        it('then unbind a callback in the midst of it firing', function () {
             var callback = function () {
                 obj.counter += 1;
                 obj.off('event', callback);
@@ -127,10 +128,10 @@ describe('Events', function () {
         });
     });
 
-    describe("callbacks", function () {
+    describe('callbacks', function () {
         beforeEach(setup);
 
-        it("that unbind themeselves", function () {
+        it('that unbind themeselves', function () {
             var incrA = function () {
                 obj2.counterA += 1;
                 obj2.off('event', incrA);
@@ -148,7 +149,7 @@ describe('Events', function () {
             assert.strictEqual(obj2.counterB, 1); // counterB should have only been incremented once
         });
 
-        it("bound with a supplied context", function () {
+        it('bound with a supplied context', function () {
             var TestClass = function () {
                 return this;
             };
@@ -162,7 +163,7 @@ describe('Events', function () {
             obj.trigger('event');
         });
 
-        it("nested trigger with unbind", function () {
+        it('nested trigger with unbind', function () {
             var incr1 = function () {
                 obj.counter += 1;
                 obj.off('event', incr1);
@@ -177,7 +178,7 @@ describe('Events', function () {
             assert.strictEqual(obj.counter, 3); // counter should have been incremented three times
         });
 
-        it("are not altered during trigger", function () {
+        it('are not altered during trigger', function () {
             var counter = 0;
             var incr = function () {
                 counter++;
@@ -198,10 +199,10 @@ describe('Events', function () {
         });
     });
 
-    describe("remove",  function () {
+    describe('remove', function () {
         beforeEach(setup);
 
-        it("all events for a specific context", function () {
+        it('all events for a specific context', function () {
             obj.on('x y all', function () {
                 assert.ok(true);
             });
@@ -212,7 +213,7 @@ describe('Events', function () {
             obj.trigger('x y');
         });
 
-        it("all events for a specific callback", function () {
+        it('all events for a specific callback', function () {
             var success = function () {
                 assert.ok(true);
             };
@@ -225,7 +226,7 @@ describe('Events', function () {
             obj.trigger('x y');
         });
 
-        it("does not skip consecutive events", function () {
+        it('does not skip consecutive events', function () {
             obj.on('event', function () {
                 assert.ok(false);
             }, obj);
@@ -237,10 +238,10 @@ describe('Events', function () {
         });
     });
 
-    describe("once", function () {
+    describe('once', function () {
         beforeEach(setup);
 
-        it("counters", function () {
+        it('counters', function () {
             // Same as the previous test, but we use once rather than having to explicitly unbind
             var incrA = function () {
                 obj2.counterA += 1;
@@ -256,7 +257,7 @@ describe('Events', function () {
             assert.strictEqual(obj2.counterB, 1); // counterB should have only been incremented once
         });
 
-        it("variant two", function () {
+        it('variant two', function () {
             var f = function () {
                 assert.ok(true);
             };
@@ -274,7 +275,7 @@ describe('Events', function () {
             b.trigger('event');
         });
 
-        it("variant three", function () {
+        it('variant three', function () {
             var f = function () {
                 assert.ok(true);
             };
@@ -285,7 +286,7 @@ describe('Events', function () {
                 .trigger('event');
         });
 
-        it("with off", function () {
+        it('with off', function () {
             var f = function () {
                 assert.ok(true);
             };
@@ -295,7 +296,7 @@ describe('Events', function () {
             obj.trigger('event');
         });
 
-        it("with event maps", function () {
+        it('with event maps', function () {
             var increment = function () {
                 this.counter += 1;
             };
@@ -319,7 +320,7 @@ describe('Events', function () {
             assert.strictEqual(obj.counter, 3);
         });
 
-        it("with off only by context", function () {
+        it('with off only by context', function () {
             var context = {};
             obj.once('event', function () {
                 assert.ok(false);
@@ -328,7 +329,7 @@ describe('Events', function () {
             obj.trigger('event');
         });
 
-        it("with asynchronous events", function (done) {
+        it('with asynchronous events', function (done) {
             var doneId = null;
             var func = function () {
                 assert.strictEqual(doneId, null);
@@ -344,14 +345,14 @@ describe('Events', function () {
             }, 0);
         });
 
-        it("with multiple events.", function () {
+        it('with multiple events.', function () {
             obj.once('x y', function () {
                 assert.ok(true);
             });
             obj.trigger('x').trigger('y');
         });
 
-        it("Off during iteration", function () {
+        it('Off during iteration', function () {
             var f = function () {
                 this.off('event', f);
             };
@@ -366,10 +367,10 @@ describe('Events', function () {
         });
     });
 
-    describe("`all`", function () {
+    describe('`all`', function () {
         beforeEach(setup);
 
-        it("once should work as expected", function () {
+        it('once should work as expected', function () {
             obj.once('all', function () {
                 assert.ok(true);
                 obj.trigger('all');
@@ -377,7 +378,7 @@ describe('Events', function () {
             obj.trigger('all');
         });
 
-        it("callback list is retrieved after each event.", function () {
+        it('callback list is retrieved after each event.', function () {
             var counter = 0;
             var incr = function () {
                 counter++;
@@ -389,7 +390,7 @@ describe('Events', function () {
             assert.strictEqual(counter, 2);
         });
 
-        it("triggered for each event", function () {
+        it('triggered for each event', function () {
             var a, b;
             obj.on('all', function (event) {
                 obj.counter++;
@@ -403,19 +404,19 @@ describe('Events', function () {
         });
     });
 
-    describe("noop", function () {
+    describe('noop', function () {
         beforeEach(setup);
 
-        it("on without a callback", function () {
+        it('on without a callback', function () {
             obj.on('test').trigger('test');
         });
 
-        it("once without a callback", function () {
+        it('once without a callback', function () {
             obj.once('event').trigger('event');
         });
     });
 
-    it("event functions are chainable", function () {
+    it('event functions are chainable', function () {
         setup();
         function fn() {}
         assert.strictEqual(obj, obj.trigger('noeventssetyet'));
@@ -426,7 +427,7 @@ describe('Events', function () {
         assert.strictEqual(obj2, obj2.off('a c'));
     });
 
-    it("usage example", function () {
+    it('usage example', function () {
         var args, count = 0;
 
         // require('../').mixin({})

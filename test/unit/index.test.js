@@ -1,5 +1,6 @@
+/*jshint node:true*/
 describe('index', function () {
-    "use strict";
+    'use strict';
 
     var assert = require('assert');
     var events = global.events;
@@ -7,15 +8,15 @@ describe('index', function () {
 
     function listener() { counter++; }
 
-    it("has Events member.", function () {
+    it('has Events member.', function () {
         assert.strictEqual(typeof events.Events, 'function');
     });
 
-    it("is an Events.", function () {
+    it('is an Events.', function () {
         assert.strictEqual(events instanceof events.Events, true);
     });
 
-    it("can mixin an object.", function () {
+    it('can mixin an object.', function () {
         var obj = events.mixin({});
         assert.deepEqual(obj, {
             off: events.off,
@@ -25,11 +26,11 @@ describe('index', function () {
         });
     });
 
-    it("can add a listener.", function () {
+    it('can add a listener.', function () {
         events.on('test', listener);
     });
 
-    it("can trigger an event.", function () {
+    it('can trigger an event.', function () {
         assert.strictEqual(counter, 0);
         events.trigger('test');
         assert.strictEqual(counter, 1);
