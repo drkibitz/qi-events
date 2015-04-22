@@ -3,13 +3,15 @@
   "bugs": "https://github.com/drkibitz/qi-events/issues",
   "contributors": "Jeremy Ashkenas <jashkenas@gmail.com>",
   "devDependencies": {
-    "gulp": "~3.5.2",
-    "gulp-jshint": "~1.4.0",
-    "gulp-mocha": "~0.4.1",
-    "gulp-uglify": "~0.2.1",
+    "coveralls": "*",
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.10.0",
+    "gulp-mocha": "^2.0.1",
+    "gulp-uglify": "^1.2.0",
     "gulp-util": "*",
-    "jshint-stylish": "~0.1.5",
-    "map-stream": "~0.1.0",
+    "istanbul": "*",
+    "jshint-stylish": "^1.0.1",
+    "map-stream": "^0.1.0",
     "mocha": "*"
   },
   "description": "A no nonsense event API (BASED ON Backbone.Events).",
@@ -27,7 +29,10 @@
   "name": "qi-events",
   "repository": "https://github.com/drkibitz/qi-events",
   "scripts": {
-    "test": "grunt test"
+    "jshint": "gulp jshint",
+    "test": "istanbul cover gulp test-source",
+    "coveralls": "cat ./build/coverage/lcov.info | coveralls",
+    "test-dist": "gulp test-dist"
   },
   "version": "0.0.5"
 }

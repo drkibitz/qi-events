@@ -1,9 +1,6 @@
-[![Build Status](https://travis-ci.org/drkibitz/qi-events.png?branch=master)](https://travis-ci.org/drkibitz/qi-events)
-[![Coverage Status](https://coveralls.io/repos/drkibitz/qi-events/badge.png)](https://coveralls.io/r/drkibitz/qi-events)
-[![NPM version](https://badge.fury.io/js/qi-events.png)](http://badge.fury.io/js/qi-events)
-[![devDependency Status](https://david-dm.org/drkibitz/qi-events/dev-status.png)](https://david-dm.org/drkibitz/qi-events#info=devDependencies)
-
 # Qi Events
+
+[![Version npm](https://img.shields.io/npm/v/qi-events.svg?style=flat-square)](https://www.npmjs.com/package/qi-events)[![Build Status](https://img.shields.io/travis/drkibitz/qi-events/master.svg?style=flat-square)](https://travis-ci.org/drkibitz/qi-events)[![Dependencies](https://img.shields.io/david/dev/drkibitz/qi-events.svg?style=flat-square)](https://david-dm.org/drkibitz/qi-events#info=devDependencies)[![Coverage Status](https://img.shields.io/coveralls/drkibitz/qi-events/master.svg?style=flat-square)](https://coveralls.io/r/drkibitz/qi-events?branch=master)[![API Documentation](https://img.shields.io/badge/API-Documentation-0099dd.svg?style=flat-square)](https://drkibitz.github.io/qi-events/api/latest/)
 
 http://drkibitz.github.io/qi-events/
 
