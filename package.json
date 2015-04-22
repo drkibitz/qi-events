@@ -9,6 +9,7 @@
     "gulp-mocha": "^2.0.1",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "*",
+    "ink-docstrap": "https://github.com/Pilatch/docstrap/archive/master.tar.gz",
     "istanbul": "*",
     "jshint-stylish": "^1.0.1",
     "map-stream": "^0.1.0",
@@ -32,7 +33,8 @@
     "jshint": "gulp jshint",
     "test": "istanbul cover gulp test-source",
     "coveralls": "cat ./build/coverage/lcov.info | coveralls",
-    "test-dist": "gulp test-dist"
+    "test-dist": "gulp test-dist",
+    "docs": "jsdoc -c jsdoc.conf.json && git checkout gh-pages && rm -fR ./api && mkdir ./api && mv ./docs/*/* ./api/latest && rm -fR ./docs"
   },
   "version": "0.0.5"
 }
