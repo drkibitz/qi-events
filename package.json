@@ -36,5 +36,5 @@
     "test-dist": "gulp test-dist",
     "docs": "jsdoc -c jsdoc.conf.json && git checkout gh-pages && rm -fR ./api && mkdir ./api && mv ./docs/*/* ./api/latest && rm -fR ./docs"
   },
-  "version": "0.0.5"
+  "version": "1.0.0"
 }
