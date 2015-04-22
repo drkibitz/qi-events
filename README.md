@@ -6,11 +6,16 @@ http://drkibitz.github.io/qi-events/
 
 A no nonsense event API (*BASED ON* Backbone.Events).
 
-> Backbone.js 0.9.10
-> (c) 2010-2013 Jeremy Ashkenas, DocumentCloud Inc.
-> Backbone may be freely distributed under the MIT license.
-> For all details and documentation:
-> http://backbonejs.org
+## Goals
+
+- Maintain a no nonsense event dispatching/emitting/triggering API.
+- Test it.
+- Find a happy medium between simplicity, speed, and usage.
+- Should be able to perform well in high performance situations.
+- Allow for the most common use cases, but within reason to maintain high performance.
+- Embrace CommonJS Module format
+- Allow for UglifyJS and Closure Compiler with ADVANCED_OPTIMIZATIONS.
+- Allow for use as the basis of other event implmentations (scenegraph)
 
 ## Usage
 
@@ -71,18 +76,13 @@ require('qi-events');
 // > something something darkside
 ```
 
-## Goals
-
-- Maintain a no nonsense event dispatching/emitting/triggering API.
-- Test it.
-- Find a happy medium between simplicity, speed, and usage.
-- Should be able to perform well in high performance situations.
-- Allow for the most common use cases, but within reason to maintain high performance.
-- Embrace CommonJS Module format
-- Allow for UglifyJS and Closure Compiler with ADVANCED_OPTIMIZATIONS.
-- Allow for use as the basis of other event implmentations (scenegraph)
-
 ## Changes *since Backbone.Events*
+
+> Backbone.js 0.9.10
+> (c) 2010-2013 Jeremy Ashkenas, DocumentCloud Inc.
+> Backbone may be freely distributed under the MIT license.
+> For all details and documentation:
+> http://backbonejs.org
 
 1. Added "use strict"
 2. Converted to CommonJS module
