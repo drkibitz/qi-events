@@ -54,21 +54,25 @@ function eventsApi(obj, fn, name, callback, context) {
  * @ignore
  */
 function triggerEvents(events, args, aStart) {
-    /*jshint indent:false */
     var o, i = -1, l = events.length,
-        a1 = args[aStart], a2 = args[aStart + 1], a3 = args[aStart + 2];
+        a1 = args[aStart],
+        a2 = args[aStart + 1],
+        a3 = args[aStart + 2],
+        a4 = args[aStart + 3];
     switch (args.length - aStart) {
-    case 0:
-        while (++i < l) (o = events[i]).callback.call(o.context); return;
-    case 1:
-        while (++i < l) (o = events[i]).callback.call(o.context, a1); return;
-    case 2:
-        while (++i < l) (o = events[i]).callback.call(o.context, a1, a2); return;
-    case 3:
-        while (++i < l) (o = events[i]).callback.call(o.context, a1, a2, a3); return;
-    default:
-        args = aStart ? Array.prototype.slice.call(args, aStart) : args;
-        while (++i < l) (o = events[i]).callback.apply(o.context, args);
+        case 0:
+            while (++i < l) (o = events[i]).callback.call(o.context); return;
+        case 1:
+            while (++i < l) (o = events[i]).callback.call(o.context, a1); return;
+        case 2:
+            while (++i < l) (o = events[i]).callback.call(o.context, a1, a2); return;
+        case 3:
+            while (++i < l) (o = events[i]).callback.call(o.context, a1, a2, a3); return;
+        case 4:
+            while (++i < l) (o = events[i]).callback.call(o.context, a1, a2, a3, a4); return;
+        default:
+            args = aStart ? Array.prototype.slice.call(args, aStart) : args;
+            while (++i < l) (o = events[i]).callback.apply(o.context, args);
     }
 }
 
