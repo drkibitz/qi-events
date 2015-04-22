@@ -14,9 +14,58 @@ A no nonsense event API (*BASED ON* Backbone.Events).
 
 ## Usage
 
+There are just 4 main methods to remember.
+
+- [on](http://drkibitz.github.io/qi-events/api/latest/module-qi-events.Events.html#on)
+- [once](http://drkibitz.github.io/qi-events/api/latest/module-qi-events.Events.html#once)
+- [off](http://drkibitz.github.io/qi-events/api/latest/module-qi-events.Events.html#off)
+- [trigger](http://drkibitz.github.io/qi-events/api/latest/module-qi-events.Events.html#trigger)
+
+Use the [mixin](http://drkibitz.github.io/qi-events/api/latest/module-qi-events.Events.html#toc6) method to allow any object to trigger events.
 ```javascript
 require('qi-events').mixin({});
     .on('myevent', console.log, console)
+    .trigger('myevent', 'something')
+    .trigger('myevent', 'something', 'something')
+    .trigger('myevent', 'something', 'something', 'darkside');
+
+// > something
+// > something something
+// > something something darkside
+```
+
+Mixin into any prototype object.
+```javascript
+var events = require('qi-events');
+function MyEmitter() {}
+events.mixin(MyEmitter.prototype);
+var emitter = new MyEmitter();
+emitter
+    .on('myevent', console.log, console)
+    .trigger('myevent', 'something', 'something', 'darkside');
+
+// > something something darkside
+```
+
+Extend the provided class.
+```javascript
+var Events = require('qi-events').Events;
+function MyEmitter() {}
+MyEmitter.prototype = Object.create(Events.prototype, {
+    constructor: {value: MyEmitter}
+});
+var emitter = new MyEmitter();
+emitter
+    .on('myevent', console.log, console)
+    .trigger('myevent', 'something', 'something', 'darkside');
+
+// > something something darkside
+```
+
+Use the module itself as a central dispatcher.
+```javascript
+require('qi-events');
+    .once('myevent', console.log, console)
     .trigger('myevent', 'something', 'something', 'darkside');
 
 // > something something darkside
@@ -60,6 +109,38 @@ require('qi-events').mixin({});
 
 10. Added aStart argument to triggerEvents() as a logical slice removing slice call for most cases
 
+## Why not EventEmitter?
+
+So I think we already have **four separate versions** of EventEmitter at the time of writing this paragraph (April 2015). At this point in time, I am refusing to raise that count to five, or linking to any of them. Just to be clear, I am pretty sure I published this library when there were only two versions published, and I originally implemented my changes privately on top of Backbone.Events before it was broken up into parts. With all of this said, though I may be biased, I still prefer this library. If you are interested in how this API compares to the [EventEmitter API](https://nodejs.org/api/events.html), the following example should help.
+
+```javascript
+var events = require('qi-events');
+
+function EventEmitter25() {}
+var proto = EventEmitter25.prototype;
+
+proto.emit = events.trigger;
+proto.on = proto.addListener = events.on;
+proto.once = events.once;
+proto.removeListener = events.off;
+
+proto.listeners = function (event) {
+    if (!this._events || !this._events[event]) return [];
+    for (var i = 0, l = this._events[event].length, arr = new Array(l); i < l; i++) {
+        arr[i] = this._events[event][i].callback;
+    }
+    return arr;
+};
+
+proto.removeAllListeners = function (event) {
+    return events.off.call(this, event);
+};
+
+proto.setMaxListeners = function () {
+    return this;
+};
+
+module.exports = EventEmitter25;
+```
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/drkibitz/qi-events/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
