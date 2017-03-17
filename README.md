@@ -142,5 +142,3 @@ proto.setMaxListeners = function () {
 
 module.exports = EventEmitter25;
 ```
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/drkibitz/qi-events/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
