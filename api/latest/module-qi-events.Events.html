@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
 	<title>Qi Events Class: Events</title>
 
 	<!--[if lt IE 9]>
@@ -20,8 +21,13 @@
 <div class="container">
 	<div class="navbar-header">
 		<a class="navbar-brand" href="index.html">Qi Events</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
 	</div>
-	<div class="navbar-collapse">
+	<div class="navbar-collapse collapse" id="topNavigation">
 		<ul class="nav navbar-nav">
 			
 			<li class="dropdown">
@@ -39,19 +45,32 @@
 			</li>
 			
 		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
 	</div>
+
 </div>
 </div>
 
 
-<div class="container">
+<div class="container" id="toc-content">
 <div class="row">
 
 	
 	<div class="col-md-8">
 	
 		<div id="main">
-    		
+			
 
 	<h1 class="page-title">Class: Events</h1>
 <section>
@@ -72,25 +91,26 @@
     <div class="container-overview">
     
         
+<hr>
 <dt>
-    <h4 class="name" id="Events">new .Events()</h4>
+    <h4 class="name" id="Events"><span class="type-signature"></span>new Events()</h4>
     
     
 </dt>
 <dd>
+
     
+
     
 
     
 
     
     
-    
-    
-    
+
     
 <dl class="details">
-	
+    
 
 	
 
@@ -127,7 +147,11 @@
 	
 </dl>
 
+
     
+
+    
+
     
 
     
@@ -135,11 +159,7 @@
     
 
     
-    
-    
 
-    
-    
     
 </dd>
 
@@ -161,8 +181,9 @@
 
         <dl>
             
+<hr>
 <dt class="name" id=".Events.ALL">
-    <h4>.Events.ALL</h4>
+    <h4 id=".Events.ALL"><span class="type-signature">&lt;static, constant> </span>Events.ALL<span class="type-signature"> :string</span></h4>
 
     
 </dt>
@@ -174,15 +195,21 @@
     
 
     
-        <h5>Type: 
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
 <span class="param-type">string</span>
 
-</h5>
+
+
+            </li>
+        </ul>
     
 
     
 <dl class="details">
-	
+    
 
 	
 
@@ -231,24 +258,24 @@
 
         <dl>
             
+<hr>
 <dt>
-    <h4 class="name" id="mixin">#mixin(obj)</h4>
+    <h4 class="name" id="mixin"><span class="type-signature"></span>mixin(obj)</h4>
     
     
 </dt>
 <dd>
-    
+
     
     <div class="description">
-        <p>Mixes in methods from this module's prototype to <em>any object</em>
-in order to provide it with custom events.</p>
+        <p>Mixes in methods from this module's prototype to <em>any object</em><br>in order to provide it with custom events.</p>
     </div>
     
 
     
 
     
-    
+
     
     
         <h5>Parameters:</h5>
@@ -256,23 +283,23 @@ in order to provide it with custom events.</p>
 
 <table class="params table table-striped">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
+    <tr>
+        
+        <th>Name</th>
+        
 
-		<th>Type</th>
+        <th>Type</th>
 
-		
+        
 
-		
+        
 
-		<th class="last">Description</th>
-	</tr>
-	</thead>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-	<tbody>
-	
+    <tbody>
+    
 
         <tr>
             
@@ -285,6 +312,7 @@ in order to provide it with custom events.</p>
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -295,15 +323,15 @@ in order to provide it with custom events.</p>
             <td class="description last"></td>
         </tr>
 
-	
-	</tbody>
+    
+    </tbody>
 </table>
 
     
-    
+
     
 <dl class="details">
-	
+    
 
 	
 
@@ -340,7 +368,11 @@ in order to provide it with custom events.</p>
 	
 </dl>
 
+
     
+
+    
+
     
 
     
@@ -348,46 +380,54 @@ in order to provide it with custom events.</p>
     
 
     
+    <h5>Returns:</h5>
     
-    
+            
+<div class="param-desc">
+    <p>obj passed</p>
+</div>
 
-    
-    
-<h5>Returns: 
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">Object</span>
 
-</h5>
-    
-            <div class="param-desc">
-    		<p>obj passed</p>
-	</div>
+
+
+    </dd>
+</dl>
+
 
         
-    
+
     
 </dd>
 
         
             
+<hr>
 <dt>
-    <h4 class="name" id="off">#off(name, <span class="optional">callback</span>, <span class="optional">context</span>)</h4>
+    <h4 class="name" id="off"><span class="type-signature"></span>off(name [, callback] [, context])</h4>
     
     
 </dt>
 <dd>
-    
+
     
     <div class="description">
-        <p>Remove one or many callbacks. If <code>context</code> is null, removes all callbacks
-with that function. If <code>callback</code> is null, removes all callbacks for the event.
-If <code>name</code> is null, removes all bound callbacks for all events.</p>
+        <p>Remove one or many callbacks. If <code>context</code> is null, removes all callbacks<br>with that function. If <code>callback</code> is null, removes all callbacks for the event.<br>If <code>name</code> is null, removes all bound callbacks for all events.</p>
     </div>
     
 
     
 
     
-    
+
     
     
         <h5>Parameters:</h5>
@@ -395,25 +435,25 @@ If <code>name</code> is null, removes all bound callbacks for all events.</p>
 
 <table class="params table table-striped">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
+    <tr>
+        
+        <th>Name</th>
+        
 
-		<th>Type</th>
+        <th>Type</th>
 
-		
-		<th>Argument</th>
-		
+        
+        <th>Argument</th>
+        
 
-		
+        
 
-		<th class="last">Description</th>
-	</tr>
-	</thead>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-	<tbody>
-	
+    <tbody>
+    
 
         <tr>
             
@@ -430,6 +470,7 @@ If <code>name</code> is null, removes all bound callbacks for all events.</p>
 |
 
 <span class="param-type">Object</span>
+
 
 
             
@@ -450,7 +491,7 @@ If <code>name</code> is null, removes all bound callbacks for all events.</p>
             <td class="description last"><p>String of space delimited events, array of event strings, or event map</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -464,6 +505,7 @@ If <code>name</code> is null, removes all bound callbacks for all events.</p>
 |
 
 <span class="param-type">Object</span>
+
 
 
             
@@ -486,7 +528,7 @@ If <code>name</code> is null, removes all bound callbacks for all events.</p>
             <td class="description last"><p>May be function or context if passing event map</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -497,6 +539,7 @@ If <code>name</code> is null, removes all bound callbacks for all events.</p>
             
                 
 <span class="param-type">Object</span>
+
 
 
             
@@ -519,15 +562,15 @@ If <code>name</code> is null, removes all bound callbacks for all events.</p>
             <td class="description last"></td>
         </tr>
 
-	
-	</tbody>
+    
+    </tbody>
 </table>
 
     
-    
+
     
 <dl class="details">
-	
+    
 
 	
 
@@ -564,7 +607,11 @@ If <code>name</code> is null, removes all bound callbacks for all events.</p>
 	
 </dl>
 
+
     
+
+    
+
     
 
     
@@ -572,46 +619,54 @@ If <code>name</code> is null, removes all bound callbacks for all events.</p>
     
 
     
+    <h5>Returns:</h5>
     
-    
+            
+<div class="param-desc">
+    <p>this object</p>
+</div>
 
-    
-    
-<h5>Returns: 
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">Object</span>
 
-</h5>
-    
-            <div class="param-desc">
-    		<p>this object</p>
-	</div>
+
+
+    </dd>
+</dl>
+
 
         
-    
+
     
 </dd>
 
         
             
+<hr>
 <dt>
-    <h4 class="name" id="on">#on(name, <span class="optional">callback</span>, <span class="optional">context</span>)</h4>
+    <h4 class="name" id="on"><span class="type-signature"></span>on(name [, callback] [, context])</h4>
     
     
 </dt>
 <dd>
-    
+
     
     <div class="description">
-        <p>Bind one or more space separated events, or an events map,
-to a <code>callback</code> function. Passing <code>ALL</code> will bind the
-callback to all events fired.</p>
+        <p>Bind one or more space separated events, or an events map,<br>to a <code>callback</code> function. Passing <code>ALL</code> will bind the<br>callback to all events fired.</p>
     </div>
     
 
     
 
     
-    
+
     
     
         <h5>Parameters:</h5>
@@ -619,25 +674,25 @@ callback to all events fired.</p>
 
 <table class="params table table-striped">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
+    <tr>
+        
+        <th>Name</th>
+        
 
-		<th>Type</th>
+        <th>Type</th>
 
-		
-		<th>Argument</th>
-		
+        
+        <th>Argument</th>
+        
 
-		
+        
 
-		<th class="last">Description</th>
-	</tr>
-	</thead>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-	<tbody>
-	
+    <tbody>
+    
 
         <tr>
             
@@ -654,6 +709,7 @@ callback to all events fired.</p>
 |
 
 <span class="param-type">Object</span>
+
 
 
             
@@ -674,7 +730,7 @@ callback to all events fired.</p>
             <td class="description last"><p>String of space delimited events, array of event strings, or event map</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -688,6 +744,7 @@ callback to all events fired.</p>
 |
 
 <span class="param-type">Object</span>
+
 
 
             
@@ -710,7 +767,7 @@ callback to all events fired.</p>
             <td class="description last"><p>May be function or context if passing event map</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -721,6 +778,7 @@ callback to all events fired.</p>
             
                 
 <span class="param-type">Object</span>
+
 
 
             
@@ -743,15 +801,15 @@ callback to all events fired.</p>
             <td class="description last"></td>
         </tr>
 
-	
-	</tbody>
+    
+    </tbody>
 </table>
 
     
-    
+
     
 <dl class="details">
-	
+    
 
 	
 
@@ -788,7 +846,11 @@ callback to all events fired.</p>
 	
 </dl>
 
+
     
+
+    
+
     
 
     
@@ -796,45 +858,54 @@ callback to all events fired.</p>
     
 
     
+    <h5>Returns:</h5>
     
-    
+            
+<div class="param-desc">
+    <p>this object</p>
+</div>
 
-    
-    
-<h5>Returns: 
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">Object</span>
 
-</h5>
-    
-            <div class="param-desc">
-    		<p>this object</p>
-	</div>
+
+
+    </dd>
+</dl>
+
 
         
-    
+
     
 </dd>
 
         
             
+<hr>
 <dt>
-    <h4 class="name" id="once">#once(name, <span class="optional">callback</span>, <span class="optional">context</span>)</h4>
+    <h4 class="name" id="once"><span class="type-signature"></span>once(name [, callback] [, context])</h4>
     
     
 </dt>
 <dd>
-    
+
     
     <div class="description">
-        <p>Bind events to only be triggered a single time. After the
-first time the callback is invoked, it will be removed.</p>
+        <p>Bind events to only be triggered a single time. After the<br>first time the callback is invoked, it will be removed.</p>
     </div>
     
 
     
 
     
-    
+
     
     
         <h5>Parameters:</h5>
@@ -842,25 +913,25 @@ first time the callback is invoked, it will be removed.</p>
 
 <table class="params table table-striped">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
+    <tr>
+        
+        <th>Name</th>
+        
 
-		<th>Type</th>
+        <th>Type</th>
 
-		
-		<th>Argument</th>
-		
+        
+        <th>Argument</th>
+        
 
-		
+        
 
-		<th class="last">Description</th>
-	</tr>
-	</thead>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-	<tbody>
-	
+    <tbody>
+    
 
         <tr>
             
@@ -877,6 +948,7 @@ first time the callback is invoked, it will be removed.</p>
 |
 
 <span class="param-type">Object</span>
+
 
 
             
@@ -897,7 +969,7 @@ first time the callback is invoked, it will be removed.</p>
             <td class="description last"><p>String of space delimited events, array of event strings, or event map</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -911,6 +983,7 @@ first time the callback is invoked, it will be removed.</p>
 |
 
 <span class="param-type">Object</span>
+
 
 
             
@@ -933,7 +1006,7 @@ first time the callback is invoked, it will be removed.</p>
             <td class="description last"><p>May be function or context if passing event map</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -944,6 +1017,7 @@ first time the callback is invoked, it will be removed.</p>
             
                 
 <span class="param-type">Object</span>
+
 
 
             
@@ -966,15 +1040,15 @@ first time the callback is invoked, it will be removed.</p>
             <td class="description last"></td>
         </tr>
 
-	
-	</tbody>
+    
+    </tbody>
 </table>
 
     
-    
+
     
 <dl class="details">
-	
+    
 
 	
 
@@ -1011,7 +1085,11 @@ first time the callback is invoked, it will be removed.</p>
 	
 </dl>
 
+
     
+
+    
+
     
 
     
@@ -1019,47 +1097,54 @@ first time the callback is invoked, it will be removed.</p>
     
 
     
+    <h5>Returns:</h5>
     
-    
+            
+<div class="param-desc">
+    <p>this object</p>
+</div>
 
-    
-    
-<h5>Returns: 
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">Object</span>
 
-</h5>
-    
-            <div class="param-desc">
-    		<p>this object</p>
-	</div>
+
+
+    </dd>
+</dl>
+
 
         
-    
+
     
 </dd>
 
         
             
+<hr>
 <dt>
-    <h4 class="name" id="trigger">#trigger(name, <span class="optional">arg</span>)</h4>
+    <h4 class="name" id="trigger"><span class="type-signature"></span>trigger(name [, arg])</h4>
     
     
 </dt>
 <dd>
-    
+
     
     <div class="description">
-        <p>Trigger one event by name, firing all bound callbacks. Callbacks are
-passed the same arguments as <code>trigger</code> is, apart from the event name
-(unless you're listening on <code>ALL</code>, which will cause your callback to
-receive the true name of the event as the first argument).</p>
+        <p>Trigger one event by name, firing all bound callbacks. Callbacks are<br>passed the same arguments as <code>trigger</code> is, apart from the event name<br>(unless you're listening on <code>ALL</code>, which will cause your callback to<br>receive the true name of the event as the first argument).</p>
     </div>
     
 
     
 
     
-    
+
     
     
         <h5>Parameters:</h5>
@@ -1067,25 +1152,25 @@ receive the true name of the event as the first argument).</p>
 
 <table class="params table table-striped">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
+    <tr>
+        
+        <th>Name</th>
+        
 
-		<th>Type</th>
+        <th>Type</th>
 
-		
-		<th>Argument</th>
-		
+        
+        <th>Argument</th>
+        
 
-		
+        
 
-		<th class="last">Description</th>
-	</tr>
-	</thead>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-	<tbody>
-	
+    <tbody>
+    
 
         <tr>
             
@@ -1096,6 +1181,7 @@ receive the true name of the event as the first argument).</p>
             
                 
 <span class="param-type">string</span>
+
 
 
             
@@ -1116,7 +1202,7 @@ receive the true name of the event as the first argument).</p>
             <td class="description last"><p>Single event name</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -1127,6 +1213,7 @@ receive the true name of the event as the first argument).</p>
             
                 
 <span class="param-type">*</span>
+
 
 
             
@@ -1151,15 +1238,15 @@ receive the true name of the event as the first argument).</p>
             <td class="description last"></td>
         </tr>
 
-	
-	</tbody>
+    
+    </tbody>
 </table>
 
     
-    
+
     
 <dl class="details">
-	
+    
 
 	
 
@@ -1196,7 +1283,11 @@ receive the true name of the event as the first argument).</p>
 	
 </dl>
 
+
     
+
+    
+
     
 
     
@@ -1204,22 +1295,31 @@ receive the true name of the event as the first argument).</p>
     
 
     
+    <h5>Returns:</h5>
     
-    
+            
+<div class="param-desc">
+    <p>this object</p>
+</div>
 
-    
-    
-<h5>Returns: 
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
 <span class="param-type">Object</span>
 
-</h5>
-    
-            <div class="param-desc">
-    		<p>this object</p>
-	</div>
+
+
+    </dd>
+</dl>
+
 
         
-    
+
     
 </dd>
 
@@ -1243,7 +1343,7 @@ receive the true name of the event as the first argument).</p>
 
 	
 		<div class="col-md-3">
-			<div id="toc" class="col-md-3"></div>
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
 		</div>
 	
 
@@ -1251,24 +1351,43 @@ receive the true name of the event as the first argument).</p>
 </div>
 
 
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
 <footer>
 
 
 	<span class="copyright">
-	Copyright © 2013-2015 Dr. Kibitz
+	Copyright © 2013-2017 Dr. Kibitz
 	</span>
 
 <span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta3</a>
-	on 2015-04-22T00:20:03-07:00 using the <a
-	href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
+	
+		on 2017-03-16T23:22:53-07:00
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
 </footer>
 
-<!--<script src="scripts/sunlight.js"></script>-->
 <script src="scripts/docstrap.lib.js"></script>
-<script src="scripts/bootstrap-dropdown.js"></script>
 <script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
 
 <script>
 $( function () {
@@ -1278,21 +1397,7 @@ $( function () {
 		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
 	} );
 
-	$( "#toc" ).toc( {
-		anchorName  : function ( i, heading, prefix ) {
-			return $( heading ).attr( "id" ) || ( prefix + i );
-		},
-		selectors   : "h1,h2,h3,h4",
-		showAndHide : false,
-		scrollTo    : "100px"
-	} );
-
-	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
-	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
-	$( '.dropdown-toggle' ).dropdown();
-	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
-
-	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
 		var $this = $( this );
 
 		var example = $this.find( "code" );
@@ -1303,7 +1408,8 @@ $( function () {
 			example.html( exampleText );
 			lang = lang[1];
 		} else {
-			lang = "javascript";
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
 		}
 
 		if ( lang ) {
@@ -1321,6 +1427,27 @@ $( function () {
 		showMenu : true,
 		enableDoclinks : true
 	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
 } );
 </script>
 
@@ -1330,6 +1457,14 @@ $( function () {
 
 
 <!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
 
 
 </body>
