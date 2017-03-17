@@ -4,7 +4,6 @@
 var gulp   = require('gulp'),
     jshint = require('gulp-jshint'),
     map    = require('map-stream'),
-    mocha  = require('gulp-mocha'),
     uglify = require('gulp-uglify'),
     pkg    = require('./package.json'),
     date   = new Date(),
@@ -42,7 +41,7 @@ gulp.task('uglify', function () {
             ]);
             cb(null, file);
         }))
-        .pipe(uglify())
+        .pipe(uglify({wrap: 'events'}))
         .pipe(map(function (file, cb) {
             file.contents = Buffer.concat([new Buffer(banner), file.contents]);
             cb(null, file);
@@ -50,18 +49,4 @@ gulp.task('uglify', function () {
         .pipe(gulp.dest('./'));
 });
 
-function testTask(requireModule) {
-    return function () {
-        gulp.src('test/unit/**/*.js', {read: false})
-            .pipe(mocha({
-                reporter: 'spec',
-                globals: {
-                    'events': require(requireModule)
-                }
-            }));
-    };
-}
-gulp.task('test-source', testTask('./test/source'));
-gulp.task('test-dist', ['uglify'], testTask('./test/dist'));
-
-gulp.task('default', ['jshint', 'test-dist']);
+gulp.task('default', ['jshint', 'uglify']);
